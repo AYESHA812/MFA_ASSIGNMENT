@@ -34,8 +34,16 @@ cat oov_prons.dict >> english_us_arpa.dict
 # Verify audio
 soxi corpus/F2BJRLP1.wav
 
+
 # Run forced alignment
 mfa align corpus english_us_arpa.dict english_us_arpa aligned_output --clean --overwrite
+
+
+<img width="1919" height="992" alt="Screenshot 2026-02-07 134408" src="https://github.com/user-attachments/assets/53546e97-2d47-4284-9716-8e5f1cc277b5" />
+
+
+
+The forced alignment output was analyzed using Praat by jointly visualizing the waveform, spectrogram, pitch contour, and TextGrid tiers. Figure shown above illustrates the alignment for an utterance containing the word mandatory. The word-level boundary for mandatory aligns closely with changes in waveform amplitude and energy, indicating accurate segmentation of the spoken word. Within the word boundary, the phoneme-level tier shows multiple contiguous segments corresponding to the constituent phonemes, all properly contained within the word interval. Vowel segments exhibit longer durations and clearer formant structures in the spectrogram, while consonantal segments show shorter durations and reduced energy, consistent with expected acoustic properties. The pitch contour is present during voiced regions and diminishes during voiceless segments, further supporting the temporal accuracy of the alignment. Minor timing variations are observed in regions of rapid or connected speech, which can be attributed to coarticulation effects rather than alignment errors. Overall, the visualization confirms that the forced alignment successfully captured both word- and phoneme-level timing with satisfactory accuracy.
 
 
 
